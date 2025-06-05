@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+ <meta charset="UTF-8" />
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+ <title>Player Database – Virtual League</title>
+
+ <style>
+
+ body {
+
+ font-family: Arial, sans-serif;
+
+ margin: 0;
+
+ background-color: #f9f9f9;
+
+ }
+
+<br>
+
+ header {
+
+ background-color: #ffffff;
+
+ padding: 20px;
+
+ text-align: center;
+
+ border-bottom: 1px solid #ddd;
+
+ }
+
+<br>
+
+ header h1 {
+
+ font-size: 2rem;
+
+ margin: 0;
+
+ }
+
+<br>
+
+ nav {
+
+ background-color: #eaeaea;
+
+ display: flex;
+
+ justify-content: center;
+
+ border-bottom: 1px solid #ccc;
+
+ }
+
+<br>
+
+ nav a {
+
+ padding: 15px 20px;
+
+ text-decoration: none;
+
+ color: #000;
+
+ font-weight: bold;
+
+ border-right: 1px solid #ccc;
+
+ }
+
+<br>
+
+ nav a:last-child {
+
+ border-right: none;
+
+ }
+
+<br>
+
+ .container {
+
+ padding: 30px;
+
+ max-width: 800px;
+
+ margin: 0 auto;
+
+ }
+
+<br>
+
+ .filter {
+
+ margin-bottom: 30px;
+
+ text-align: center;
+
+ }
+
+<br>
+
+ .player-card {
+
+ background-color: #fff;
+
+ border: 1px solid #ccc;
+
+ padding: 15px;
+
+ border-radius: 6px;
+
+ margin-bottom: 15px;
+
+ }
+
+<br>
+
+ .player-name {
+
+ font-weight: bold;
+
+ }
+
+<br>
+
+ .player-sport {
+
+ color: #555;
+
+ }
+
+ </style>
+
+</head>
+
+<body>
+
+ <header>
+
+ <h1>Player Database</h1>
+
+ </header>
+
+<br>
+
+ <nav>
+
+ <a href="index.html">For Players</a>
+
+ <a href="for-organizers.html">For Organizers</a>
+
+ <a href="join-a-game.html">Join a Game</a>
+
+ <a href="organize-a-game.html">Organize a Game</a>
+
+ </nav>
+
+<br>
+
+ <div class="container">
+
+ <div class="filter">
+
+ <label for="sport-select">Filter by Sport:</label>
+
+ <select id="sport-select">
+
+ <option value="all">All</option>
+
+ <option value="hockey">Hockey</option>
+
+ <option value="soccer">Soccer</option>
+
+ <option value="minigolf">Mini Golf</option>
+
+ <option value="tennis">Tennis</option>
+
+ <option value="pickleball">Pickleball</option>
+
+ </select>
+
+ </div>
+
+<br>
+
+ <div class="player-card" data-sport="hockey">
+
+ <div class="player-name">Alex Johnson</div>
+
+ <div class="player-sport">Hockey – Casual</div>
+
+ </div>
+
+ <div class="player-card" data-sport="soccer">
+
+ <div class="player-name">Maria Gomez</div>
+
+ <div class="player-sport">Soccer – Competitive</div>
+
+ </div>
+
+ <div class="player-card" data-sport="minigolf">
+
+ <div class="player-name">Ethan Chu</div>
+
+ <div class="player-sport">Mini Golf – Beginner</div>
+
+ </div>
+
+ <div class="player-card" data-sport="tennis">
+
+ <div class="player-name">Samantha Lee</div>
+
+ <div class="player-sport">Tennis – Beginner</div>
+
+ </div>
+
+ <div class="player-card" data-sport="pickleball">
+
+ <div class="player-name">Jordan Kim</div>
+
+ <div class="player-sport">Pickleball – Casual</div>
+
+ </div>
+
+ </div>
+
+<br>
+
+ <script>
+
+ const select = document.getElementById("sport-select");
+
+ const cards = document.querySelectorAll(".player-card");
+
+<br>
+
+ select.addEventListener("change", () => {
+
+ const selected = select.value;
+
+ cards.forEach(card => {
+
+ const sport = card.getAttribute("data-sport");
+
+ card.style.display = selected === "all" || sport === selected ? "block" : "none";
+
+ });
+
+ });
+
+ </script>
+
+</body>
+
+</html>
+
